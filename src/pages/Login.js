@@ -6,9 +6,11 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const { error, login } = useLogin()
 
+
   const handleSubmit = (e) => {
     e.preventDefault()
     login(email, password)
+
   }
 
   return (

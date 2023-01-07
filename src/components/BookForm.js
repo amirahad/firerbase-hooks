@@ -2,14 +2,16 @@
 import { useState } from 'react'
 // import { db } from '../firebase/config'
 import useAddData from '../hooks/useAddData'
+import { useAuthContext } from '../hooks/useAuthContext';
 
 export default function BookForm() {
   const [newBook, setNewBook] = useState('')
   const { addData } = useAddData('books')
+  const { user } = useAuthContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    addData(newBook);
+    addData(newBook, user.uid);
     setNewBook('')
   }
 

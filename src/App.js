@@ -2,6 +2,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom'
 
 // components
 import Navbar from './components/Navbar'
+import PrivateRoute from './components/PrivateRoute'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
@@ -12,9 +13,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Switch>
-          <Route exact path="/">
+          <PrivateRoute exact path="/">
             <Home />
-          </Route>
+          </PrivateRoute>
           <Route path="/signup">
             <Signup />
           </Route>
